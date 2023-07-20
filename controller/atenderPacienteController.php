@@ -11,6 +11,9 @@
         public function actualizaTodoPaciente(){
             return ($this->model->updateAllPaciente() != false) ? header("Location:listarPaciente.php") : header("Location:listarPaciente.php"); 
         }
+        public function actualizaTodoPacienteOptimizada(){
+            return ($this->model->updateAllPaciente() != false) ? header("Location:listarPacienteOptimizado.php") : header("Location:listarPaciente.php"); 
+        }
         public function buscarPaciente(){  
             return ($this->model->findPaciente()) ? $this->model->findPaciente() : false; 
         }
@@ -26,11 +29,17 @@
         public function ActualizaAtencion(){
             return ($this->model->freeAtencion() != false) ? header("Location:listarPaciente.php") : header("Location:listarPaciente.php");
         }
+        public function ActualizaAtencionOptimizada(){
+            return ($this->model->freeAtencion() != false) ? header("Location:listarPacienteOptimizado.php") : header("Location:listarPaciente.php");
+        }
         public function actualizarConsulta($idConsulta, $idEstConsulta){
             return ($this->model->updateConsulta($idConsulta, $idEstConsulta) != false) ? header("Location:listarPaciente.php") : header("Location:listarPaciente.php");
         }
         public function liberarConsulta(){
             return ($this->model->freeConsultas() != false) ? header("Location:listarPaciente.php") : header("Location:listarPaciente.php");
+        }
+        public function liberarConsultaOptimizada(){
+            return ($this->model->freeConsultas() != false) ? header("Location:listarPacienteOptimizado.php") : header("Location:listarPaciente.php");
         }
     }
 ?>

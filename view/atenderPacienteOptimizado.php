@@ -8,7 +8,7 @@
 
 <div class = "container">
     <h2 class="text-center">Estado de Consultas</h2>
-    <a href="actualizarConsultas.php" class="btn btn-primary">Liberar Consultas</a>
+    <a href="actualizarConsultasOptimizado.php" class="btn btn-primary">Liberar Consultas</a>
     <div class = "row">
         <div class="col">
             <table class="table table-hover container-fluid">
