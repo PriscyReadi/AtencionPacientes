@@ -14,6 +14,9 @@
         public function buscarPaciente(){  
             return ($this->model->findPaciente()) ? $this->model->findPaciente() : false; 
         }
+        public function buscarPacienteOptimizado(){  
+            return ($this->model->findPacienteOptimizado()) ? $this->model->findPacienteOptimizado() : false; 
+        }
         public function actualizarPaciente($idPaciente, $idEstado){
             return ($this->model->updatePaciente($idPaciente, $idEstado) != false) ? header("Location:listarPaciente.php") : header("Location:listarPaciente.php"); 
         }

@@ -18,6 +18,12 @@
           $stament = $this->PDO->prepare("(SELECT p.idPaciente FROM paciente p WHERE p.estadoPaciente = 1 ORDER BY p.idRiesgo DESC , p.idPaciente ASC) UNION (SELECT p.idPaciente FROM paciente p WHERE p.estadoPaciente = 2 ORDER BY p.idRiesgo DESC , p.idPaciente ASC) LIMIT 1;");
           return ($stament->execute()) ? $stament->fetch() : false;
         }
+        public function findPacienteOptimizado(){
+          //buscar pacienten espera optimizado
+          //$stament = $this->PDO->prepare("SELECT idPaciente FROM paciente p WHERE p.estadoPaciente<>0 ORDER BY p.estadoPaciente DESC, p.idPaciente DESC LIMIT 1");
+          $stament = $this->PDO->prepare("SELECT ROW_NUMBER() OVER(order BY p.idRiesgo DESC) AS row_num , p.nombrePaciente, p.edadPaciente, p.noHistCli, p.idRiesgo, p.estadoPaciente, p.idPaciente FROM paciente p WHERE p.estadoPaciente = 1 OR p.estadoPaciente = 2 ORDER BY p.idRiesgo DESC , p.tipoPaciente ASC, p.idPaciente ASC limit 1;");
+          return ($stament->execute()) ? $stament->fetch() : false;
+        }
         public function updateAtencion($idConsulta, $idEspecialista, $idTipoConsulta, $idPaciente){
           //inserta en la tabla atención para el historial
           $stament = $this->PDO->prepare(

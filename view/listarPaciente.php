@@ -19,7 +19,6 @@
 
 <div class = "container">
     <h2 class="text-center">Pacientes para ser atendidos</h2>
-    <a href="actualizarListaPaciente.php" class="btn btn-primary">Optimizar Atención</a>
     <div class = "row">
         <div class="col">
             <table class="table table-hover container-fluid">

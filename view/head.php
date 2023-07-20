@@ -19,6 +19,9 @@
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav">
                         <li class="nav-item">
+                            <a class="nav-link" href="listarPacienteOptimizado.php">Atención Optimizada</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link active" aria-current="page"  onclick= "cargarMayorRiesgo()" href="">Pacientes Mayor Riesgo</a>
                         </li>
                             <li class="nav-item">
